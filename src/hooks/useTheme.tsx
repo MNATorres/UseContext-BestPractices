@@ -21,12 +21,15 @@ interface ThemeContextType {
   switchTheme: () => void;
 }
 
+//Creacion contexto
 const ThemeContext = React.createContext<ThemeContextType>({
   theme: themes.light,
   switchTheme: () => {}
 });
 
-export const ThemeProvider: React.FC = ({ children }: any) => {
+
+//Crecion provider
+export const ThemeProvider: React.FC = ({ children }:any) => {
   const [light, setLight] = React.useState(true);
 
   const switchTheme = () => {
@@ -42,6 +45,7 @@ export const ThemeProvider: React.FC = ({ children }: any) => {
   );
 };
 
+//Creacion hook
 export const useTheme = () => {
   const context = React.useContext(ThemeContext);
   return context;

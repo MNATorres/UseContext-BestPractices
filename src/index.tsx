@@ -1,16 +1,17 @@
-import React, { StrictMode } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
+import { ThemeProvider } from './hooks/useTheme';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <StrictMode>
+    <ThemeProvider>
       <App />
-    </StrictMode>
+    </ThemeProvider>
   </React.StrictMode>
 );
 
